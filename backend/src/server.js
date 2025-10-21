@@ -3,7 +3,6 @@ import cors from "cors";
 import dotenv from "dotenv";
 import notesRoutes from "./routes/notesRoutes.js";
 import { connectDB } from "./config/db.js";
-import rateLimiter from "./middleware/rateLimiter.js";
 import path from "path";
 
 dotenv.config();
@@ -16,7 +15,6 @@ if (process.env.NODE_ENV !== "production") {
   app.use(cors({ origin: "http://localhost:5173" }));
 }
 app.use(express.json());
-app.use(rateLimiter);
 
 // app.use((req, res, next) => {
 //   console.log("We just got a new request!");
