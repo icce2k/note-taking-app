@@ -15,12 +15,6 @@ if (process.env.NODE_ENV !== "production") {
   app.use(cors({ origin: "http://localhost:5173" }));
 }
 app.use(express.json());
-
-// app.use((req, res, next) => {
-//   console.log("We just got a new request!");
-//   next();
-// });
-
 app.use("/api/notes", notesRoutes);
 
 if (process.env.NODE_ENV === "production") {
